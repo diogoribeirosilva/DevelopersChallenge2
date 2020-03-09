@@ -1,0 +1,24 @@
+  
+<h2>Transações</h2>
+<hr>
+<p *ngIf="!transactions"><em>Carregando...</em></p>
+<div *ngIf="transactions">
+  <table class='table table-striped'>
+    <thead class="thead-light">
+      <tr>
+        <th>Data</th>
+        <th>Tipo de operação</th>
+        <th>Valor</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.datePosted | date:'dd/MM/yyyy hh:mm:ss' }}</td>
+        <td>{{ transaction.type }}</td>
+        <td>{{ transaction.transactionAmount | currency:'BRL':true }}</td>
+        <td>{{ transaction.memo }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

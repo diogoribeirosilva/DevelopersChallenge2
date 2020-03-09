@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nibo.DevelopersChallenge2.Application.DTO\Nibo.DevelopersChallenge2.Application.DTO.csproj" />
+    <ProjectReference Include="..\Nibo.DevelopersChallenge2.Domain\Nibo.DevelopersChallenge2.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

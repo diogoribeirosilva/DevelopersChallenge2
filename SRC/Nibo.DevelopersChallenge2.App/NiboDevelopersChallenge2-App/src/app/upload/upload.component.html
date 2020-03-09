@@ -1,0 +1,44 @@
+<h1>Importação de arquivos OFX</h1>
+<br />
+<form #form>
+    <div class="row">
+        <div class="col-md-4">
+            <input #file type="file" multiple (change)="upload(file.files)" />
+            <br />
+
+            <div >
+                    Arquivos importados:<br />
+                    <ul>
+                        <li *ngFor="let fileName of importedFiles">{{fileName}}</li>
+                    </ul>
+                    <br />
+                    <span>Total de transações: {{transactions.length}}</span><br/>
+                    <br/>
+
+                    <button class="btn btn-success mr-1" (click)="save()">Salvar</button>
+                    <button class="btn btn-danger" (click)="cancel()">Cancelar</button>
+                </div>
+        </div>
+        
+        <div class="col-md-8 scrollable" *ngIf="transactions">
+            <table class='table table-striped'>
+                <thead class="thead-light">
+                    <tr>
+                        <th>Data</th>
+                        <th>Tipo de operação</th>
+                        <th>Valor</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let transaction of transactions">
+                        <td>{{ transaction.datePosted  | date:'dd/MM/yyyy hh:mm:ss' }}</td>
+                        <td>{{ transaction.type }}</td>
+                        <td>{{ transaction.transactionAmount | currency:'BRL':true }}</td>
+                        <td>{{ transaction.memo }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>

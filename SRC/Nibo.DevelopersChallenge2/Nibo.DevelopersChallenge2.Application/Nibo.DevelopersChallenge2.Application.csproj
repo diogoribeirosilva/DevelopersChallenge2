@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nibo.DevelopersChallenge2.Application.DTO\Nibo.DevelopersChallenge2.Application.DTO.csproj" />
+    <ProjectReference Include="..\Nibo.DevelopersChallenge2.CrossCutting.Adapter\Nibo.DevelopersChallenge2.CrossCutting.Adapter.csproj" />
+    <ProjectReference Include="..\Nibo.DevelopersChallenge2.CrossCutting.IOC\Nibo.DevelopersChallenge2.CrossCutting.IOC.csproj" />
+    <ProjectReference Include="..\Nibo.DevelopersChallenge2.Domain.Core\Nibo.DevelopersChallenge2.Domain.Core.csproj" />
+  </ItemGroup>
+
+</Project>
